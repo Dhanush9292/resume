@@ -1,0 +1,117 @@
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #3498db;
+    --text-color: #333;
+    --bg-color: #f4f7f6;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    transform-style: preserve-3d;
+    perspective: 1000px; 
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    cursor: pointer;
+    
+}
+
+header {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
+.subtitle { font-size: 1.2rem; color: var(--accent-color); margin-bottom: 20px; }
+
+.contact-info span { margin: 0 15px; font-size: 0.9rem; }
+.contact-info a { color: #fff; text-decoration: none; }
+
+section {
+    background: #fff;
+    margin: 20px 0;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+
+h2 {
+    border-left: 5px solid var(--accent-color);
+    padding-left: 15px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.skills-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.skill-category { flex: 1; min-width: 250px; }
+
+ul { list-style: none; padding: 0; }
+ul li::before {
+    content: "•";
+    color: var(--accent-color);
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container { width: 95%; }
+    .contact-info span { display: block; margin: 10px 0; }
+}
+/* Container for the 3D effect */
+.tilt-card {
+    background: #fff;
+    margin: 20px 0;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    
+    /* 3D Essentials */
+    transform-style: preserve-3d;
+    perspective: 1000px; 
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    cursor: pointer;
+}
+
+/* Make content pop out slightly from the card */
+.card-content {
+    transform: translateZ(50px); /* Moves text forward in 3D space */
+}
+
+/* Hover effect for a "lift" look */
+.tilt-card:hover {
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+/* Smooth transition for the internal elements */
+.tilt-card h2, .tilt-card p {
+    transition: transform 0.3s ease;
+}
